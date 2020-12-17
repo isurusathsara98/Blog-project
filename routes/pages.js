@@ -7,7 +7,7 @@ router.get('/',(req,res)=>{
 });
 
 router.get('/register',(req,res)=>{
-    res.render('register');
+    res.render('register',{message:false});
 });
 
 router.get('/login',(req,res)=>{

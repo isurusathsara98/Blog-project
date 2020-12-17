@@ -100,3 +100,11 @@ nav>u1>li>a:hover{
     height: 4.5vh;
     font-size: 1.1vw;
 }
+.reg__alert{
+    font-style: italic;
+    margin: 5px;
+    background-color:rgb(255, 143, 143);
+    place-items: center;
+    display:grid;
+    font-size: 1.8vw;
+}

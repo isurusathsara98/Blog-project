@@ -50,6 +50,11 @@
                <input type="password" id="password" name="password" placeholder="Password"
                required/> 
                </div>
+               <div class="input__label">
+                <label for="password">Retype Password</label>
+                <input type="password" id="passwordconfirm" name="passwordconfirm" placeholder="Password"
+                required/> 
+                </div>
 
                <div class="input__label">
                <label for="mobile">Mobile</label>
@@ -57,12 +62,18 @@
                required/> 
                </div>
             </div>
+            <% if(message) {%>
+                <div class="reg__alert"> <%= message%> </div>
+                <% console.log(message)%>
+                  <%}%>
             <div class="form__button">
                 <button type="submit">Register</button>     
             </div>
                     
-           
+         
        </form>
+
+      
    </div>
 </body>
 </html>
