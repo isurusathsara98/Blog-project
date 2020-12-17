@@ -12,4 +12,7 @@ app.get('/login',(req, res)=>{
 app.get('/register',(req, res)=>{
     res.render('register.ejs', {name: 'Isuru'})
 })
+app.post('/register', (req, res)=>{
+    
+})
 app.listen(3000)
