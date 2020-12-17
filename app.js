@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
 
@@ -13,6 +14,8 @@ const db= mysql.createConnection({
     database:'blog'
 })
 
+app.set('view engine','ejs');
+
 db.connect((error)=>{
     if(error){
         console.log(error)
@@ -22,8 +25,12 @@ db.connect((error)=>{
     }
 })
 
+const publicDirectory = path.join(__dirname,'./public');
+app.use(express.static(publicDirectory));
+
+
 app.get("/",(req, res)=>{
-    res.send("<h1>Home</h1>")
+    res.render("index")
 });
 
 app.listen(3000,()=>{
