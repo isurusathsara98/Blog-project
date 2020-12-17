@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(207, 255, 175);
+    background-image: url("https://www.wallpapertip.com/wmimgs/177-1774185_advice-article-background-beverage-blog-blogger-blogger-background.jpg")
 }
 nav{
     align-items: center;
@@ -10,20 +10,31 @@ nav{
 }
 nav>h3{
     color: rgb(90, 19, 204);
-    font-size: 2.2vw;
+    font-size: 2.1vw;
     display:flex;
     flex:1;
     margin-left: 47vw;
 }
-u1{
+nav>u1{
     display: flex;
-    margin-right:1vw;
+    margin-right:1.2vw;
     justify-content: space-evenly;
+    font-size: 1.5vw;
 }
-u1>li{
+
+nav>u1>li{
+   
     display: flex;
     justify-content: space-between;
     margin-left:1vw;
+}
+nav>u1>li>a{
+    color: rgb(109, 107, 245);
+    text-decoration:none;
+    font-weight: bold;
+}
+nav>u1>li>a:hover{
+    color: rgb(76, 16, 172);
 }
 .home_welcome{
     background-color: rgb(252, 250, 144);
@@ -43,5 +54,49 @@ u1>li{
     font-weight: 10vw;
     display: flex;
     font-size: 1.5vw;
-   
+}
+
+.register__form{
+    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    margin: 1vh 23vw 10vh 23vw;
+
+}
+.register__form>h1{
+    font-size: 1.9vw;
+    font-style: bold;
+}
+.form__input{
+    display: grid;
+    font-style: italic;
+    
+}
+.input__label{
+    display:flex;
+    justify-content: space-between;
+    margin:1.1vw;
+}
+.input__label>label{
+    margin-right:1.2vw;
+}
+.form__button{
+    display: grid;
+    place-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.form__button>button{
+    width: 7.5vw;
+    height: 4vh;
+    background-color: lightblue;
+    cursor: pointer;
+    font-size: 1.2vw;
+}
+.form__button>button:hover{
+    background-color: rgb(33, 176, 224);
+    width: 8vw;
+    height: 4.5vh;
+    font-size: 1.1vw;
 }
