@@ -3,10 +3,10 @@ const jwt=require("jsonwebtoken");
 const bcrypt=require("bcryptjs");
 
 const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: '17/Eng/099',
-    database:'blog'
+    host:'sql12.freemysqlhosting.net',
+    user: 'sql12382814',
+    password: 'Sa17rqBTlH',
+    database:'sql12382814'
 })
 
 exports.login= async (req, res)=>{

@@ -8,10 +8,10 @@ dotenv.config({path : './.env'})
 const app = express();
 
 const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: '17/Eng/099',
-    database:'blog'
+    host:'sql12.freemysqlhosting.net',
+    user: 'sql12382814',
+    password: 'Sa17rqBTlH',
+    database:'sql12382814'
 })
 
 app.set('view engine','ejs');
