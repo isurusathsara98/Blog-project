@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const mysql = require("mysql");
 const dotenv = require("dotenv");
-
+const cookieParser=require("cookie-parser");
 dotenv.config({path : './.env'})
 
 const app = express();
@@ -30,7 +30,7 @@ app.use(express.static(publicDirectory));
 
 app.use(express.urlencoded({ extended:false}));
 app.use(express.json());
-
+app.use(cookieParser())
 
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));

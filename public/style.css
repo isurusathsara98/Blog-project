@@ -47,7 +47,7 @@ nav>u1>li>a:hover{
     font-style:italic;
     font-size: 1.9vw;
 }
-.home_welcome>p{
+.welcome_text{
     margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 10vh;
@@ -96,8 +96,6 @@ nav>u1>li>a:hover{
 }
 .form__button>button:hover{
     background-color: rgb(33, 176, 224);
-    width: 8vw;
-    height: 4.5vh;
     font-size: 1.1vw;
 }
 .reg__alert{
