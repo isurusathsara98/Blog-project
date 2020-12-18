@@ -19,6 +19,7 @@ exports.login= async (req, res)=>{
                 })
             }
             else{
+                console.log("cookie")
                 const id =results[0].id;
                 const token = jwt.sign({id: id}, process.env.JWT_SECRET,{
                     expiresIn:process.env.JWT_EXPIRES_IN
@@ -31,12 +32,13 @@ exports.login= async (req, res)=>{
                     httpOnly: true
                 }
                 res.cookie('jwt',token, cookieOptions);
-                res.status(200).redirect("/");
+                res.status(200).redirect('../home');
             }
         })
     }catch(error){
         console.log(error);
     }
+    
 }
 
 exports.register = (req, res)=>{
@@ -73,4 +75,10 @@ exports.register = (req, res)=>{
        })
     });
 
+}
+
+module.exports.logout = (req, res)=>{
+    
+    res.cookie('jwt','',{maxAge:1});
+    res.redirect('/');;
 }

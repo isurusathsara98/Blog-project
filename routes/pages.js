@@ -1,5 +1,5 @@
 const express=require('express');
-
+const {requireAuth} = require('../middleware/authmiddleware');
 const router=express.Router();
 
 router.get('/',(req,res)=>{
@@ -13,5 +13,13 @@ router.get('/register',(req,res)=>{
 router.get('/login',(req,res)=>{
     res.render('login',{message:false});
 });
-
+router.get('/home', requireAuth ,(req,res)=>{
+    res.render('home',{message:false});
+});
+router.get('/profile', requireAuth ,(req,res)=>{
+    res.render('profile',{message:false});
+});
+router.get('/logout', requireAuth ,(req,res)=>{
+    res.render('profile',{message:false});
+});
 module.exports= router;
