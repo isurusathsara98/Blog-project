@@ -1,25 +1,31 @@
 body{
-    background-image: url("https://www.wallpapertip.com/wmimgs/177-1774185_advice-article-background-beverage-blog-blogger-blogger-background.jpg")
-}
-nav{
-    align-items: center;
-    justify-content: space-around;
-    display: flex;
-    background-color: lightblue;
     
+    /* background-image: url("https://www.wallpapertip.com/wmimgs/177-1774185_advice-article-background-beverage-blog-blogger-blogger-background.jpg")
+    */
+    font-family: 'Rubik';
+   
 }
+
 nav>h3{
-    color: rgb(90, 19, 204);
+    color: #03045e;
     font-size: 2.1vw;
     display:flex;
     flex:1;
     margin-left: 47vw;
+   
 }
 nav>u1{
     display: flex;
     margin-right:1.2vw;
     justify-content: space-evenly;
     font-size: 1.5vw;
+}
+nav{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    background-color: #caf0f8;
+    
 }
 
 nav>u1>li{
@@ -37,8 +43,10 @@ nav>u1>li>a:hover{
     color: rgb(76, 16, 172);
 }
 .home_welcome{
-    background-color: rgb(252, 250, 144);
+    background-color: #023e8a;
     margin:1vh 10vw 10vh 10vw;
+    color: white;
+    text-align: justify;
 }
 .home_welcome>h1{
     align-items: center;
