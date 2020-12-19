@@ -64,48 +64,10 @@ nav>u1>li>a:hover{
     font-size: 1.5vw;
 }
 
-.register__form{
-    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
-    display: grid;
-    justify-content: center;
-    place-items: center;
-    margin: 1vh 23vw 10vh 23vw;
 
-}
-.register__form>h1{
-    font-size: 1.9vw;
-    font-style: bold;
-}
-.form__input{
-    display: grid;
-    font-style: italic;
-    
-}
-.input__label{
-    display:flex;
-    justify-content: space-between;
-    margin:1.1vw;
-}
-.input__label>label{
-    margin-right:1.2vw;
-}
-.form__button{
-    display: grid;
-    place-items: center;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-}
-.form__button>button{
-    width: 7.5vw;
-    height: 4vh;
-    background-color: lightblue;
-    cursor: pointer;
-    font-size: 1.2vw;
-}
-.form__button>button:hover{
-    background-color: rgb(33, 176, 224);
-    font-size: 1.1vw;
-}
+
+
+
 .reg__alert{
     font-style: italic;
     margin: 5px;
