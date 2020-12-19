@@ -21,8 +21,61 @@
          
      </div>
     </nav>
+    <div class="profile">
+        <div class="profile__sidebar">
 
-   
+            <div class="profile__welcome">
+                <div class="image"> 
+                    <img alt="User Pic" 
+                    src="http://localhost:3000/images/uploaded_images/<%=user.profileImage%>" class="img-circle img-responsive"> 
+                </div>
+                <h3>Welcome <%= user.firstname%> <%=user.middlename%></h3>                 
+            </div>
+
+            <div class="profile__details">
+                <h3>Profile Details</h3>
+                
+                <p>
+                     Name : <%= user.firstname%> <%= user.middlename%> <%=user.lastname%>
+                </p>
+                <p> Email : <%=user.email%></p>
+                <p> Mobile : <%=user.mobile%></p>
+                <p> Intro : 
+                    <div class="detail_cont">
+                        <%=user.Intro%>
+                    </div>                
+                </p>
+
+                <form action="/edit" method="POST">
+                    <div class="detail__button">
+                        <button type="submit">Edit</button>     
+                    </div>
+                </form>
+            </div>
+
+         </div>
+
+         <div class="profile__post">
+            <div class="post__welcome">
+                <h3>Your posts</h3>
+              </div>  
+              
+              
+         </div>
+         <div class="profile__follower">
+            <div class="follower__welcome">
+                <h3>Following</h3>
+              </div> 
+              <div class="detail__follower">
+                  <h3>sd</h3>
+              </div>
+        </div>
+         
+
+    </div>
+ 
+  
+
 
    <script>
     const navSlide=()=>{

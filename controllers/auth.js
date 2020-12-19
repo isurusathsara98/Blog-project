@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const jwt=require("jsonwebtoken");
 const bcrypt=require("bcryptjs");
+const fileupload=require("express-fileupload");
 
 const db= mysql.createConnection({
     host:'sql12.freemysqlhosting.net',
@@ -19,7 +20,6 @@ exports.login= async (req, res)=>{
                 })
             }
             else{
-                console.log("cookie")
                 const id =results[0].id;
                 const token = jwt.sign({id: id}, process.env.JWT_SECRET,{
                     expiresIn:process.env.JWT_EXPIRES_IN
@@ -42,37 +42,51 @@ exports.login= async (req, res)=>{
 }
 
 exports.register = (req, res)=>{
-    console.log(req.body);
-    const { fname, mname, lname, email, password, passwordconfirm, mobile } = req.body;
-
+    const { fname, mname, lname, email, password, passwordconfirm, mobile, image} = req.body;
     db.query('SELECT email FROM user WHERE email=?',[email],async (error,results)=>{
         if(error){
             console.log(error);
         }
-        if(results>0){
-            return res.render('register',{
-                message:"That email already exists",
-            })
-        }
-        else if(password !== passwordconfirm){
-            return res.render('register',{
-                message:"passwords doesn't match",
-            })
-        }
+        var file = req.files.uploaded_image;
+        var img_name=file.name;
+        if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
+                                 
+            file.mv('public/images/uploaded_images/'+file.name,async function(err) {
+                             
+                if (err)
+                  console.log(err);
 
-       let hashedPassword = await bcrypt.hash(password, 8);
-       console.log(hashedPassword);
-
-       db.query('INSERT INTO user SET ?',{firstname: fname, middlename:mname, lastname: lname, email:email, mobile:mobile, password:hashedPassword},(error,results)=>{
-           if(error){
-               console.log(error);
-           }
-           else{
-            return res.render('register',{
-                message:"Registered sucessfully. Please login",
-            })
-           }
-       })
+                        if(results.length>0){
+                            return res.render('register',{
+                                message:"That email already exists",
+                            })
+                        }
+                        else if(password !== passwordconfirm){
+                            return res.render('register',{
+                                message:"passwords doesn't match",
+                            })
+                        }
+                
+                       let hashedPassword = await bcrypt.hash(password, 8);
+                       console.log(hashedPassword);
+                
+                       db.query('INSERT INTO user SET ?',{firstname: fname, middlename:mname, lastname: lname, email:email, mobile:mobile, password:hashedPassword, profileImage:img_name},(error,results)=>{
+                           if(error){
+                               console.log(error);
+                           }
+                           else{
+                            return res.render('register',{
+                                message:"Registered sucessfully. Please login",
+                            })
+                           }
+                       })
+                     });
+        } else {
+         return res.render('register',{
+            message : "This format is not allowed , please upload file with '.png','.gif','.jpg'",
+        })
+        }
+        
     });
 
 }

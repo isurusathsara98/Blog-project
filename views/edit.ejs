@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Blog register</title>
+</head>
+<body>
+    <nav> 
+        <h3>Blog</h3>
+        <u1 class="nav-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </u1>
+     <div class="burger">
+         <div class="line1"></div>
+         <div class="line2"></div>
+         <div class="line3"></div>
+         
+     </div>
+    </nav>
+
+   <div class="register__form">
+       <h1>Edit details</h1>
+       <% if(message) {%>
+        <div class="reg__alert"> <%= message%> </div>
+        <% console.log(message)%>
+          <%}%>
+       <form action="/auth/edit" method="POST" role="form" enctype="multipart/form-data">
+           <div class="form__input">
+            <div class="input__label">
+            <label for="firstname">First name</label>
+               <input type="text" id="fname" name="fname" placeholder="<%=user.firstname%>"
+               required/> 
+               </div>
+               
+               <div class="input__label">
+               <label for="Middle name">Middle name</label>
+               <input type="text" id="mname" name="mname" placeholder="<%=user.middlename%>"
+               required/> 
+               </div>
+
+               <div class="input__label">
+               <label for="Last name">Last name</label>
+               <input type="text" id="lname" name="lname" placeholder="<%=user.lastname%>"
+               required/> 
+               </div>
+
+               <div class="input__label">
+               <label for="Email">Email address</label>
+               <input type="email" id="email" name="email" placeholder="<%=user.email%>"
+               required/> 
+               </div>
+
+               <div class="input__label">
+               <label for="password">New Password</label>
+               <input type="password" id="password" name="password" placeholder="Password"
+               required/> 
+               </div>
+               <div class="input__label">
+                <label for="password">Retype New Password</label>
+                <input type="password" id="passwordconfirm" name="passwordconfirm" placeholder="Password"
+                required/> 
+                </div>
+
+               <div class="input__label">
+               <label for="mobile">Mobile</label>
+               <input type="integer" id="mobile" name="mobile" placeholder="Mobile number"
+               required/> 
+            </div>
+               <div class="input__label">
+                <label for="mob_no" class="col-md-3 control-label">Profile Image</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="file" name="uploaded_image" accept=""/>
+                </div> 
+               </div>
+               <div class="input__label">
+                <label for="Current Password">Current Password</label>
+                <input type="password" id="currentpassword" name="Currentpassword" placeholder="Please enter current password"
+                required/> 
+             </div>
+            </div>
+            
+            <div class="edit__button">
+                <button type="submit">Edit</button>     
+            </div>
+                    
+         
+       </form>
+
+      
+   </div>
+
+   <script>
+    const navSlide=()=>{
+        const burger=document.querySelector('.burger');
+        const nav= document.querySelector('.nav-links');
+        const navLinks=document.querySelectorAll('.nav-links li')
+        burger.addEventListener('click',()=>{
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link,index)=>{
+            if(link.style.animation){
+                link.style.animation='';
+            }
+            else{
+                link.style.animation=`navLinkFade 0.5s ease forwards ${index/7+.5}s`;
+            }
+        })
+        })
+        
+    }
+    navSlide();
+</script>
+</body>
+</html>

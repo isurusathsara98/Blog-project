@@ -22,4 +22,7 @@ router.get('/profile', requireAuth ,(req,res)=>{
 router.get('/logout', requireAuth ,(req,res)=>{
     res.render('profile',{message:false});
 });
+router.post('/edit', requireAuth ,(req,res)=>{
+    res.render('edit',{message:"Leave any detail as it is if changes are not required"});
+});
 module.exports= router;

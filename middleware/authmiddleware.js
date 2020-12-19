@@ -1,5 +1,11 @@
 const jwt=require("jsonwebtoken");
-
+const mysql = require("mysql");
+const db= mysql.createConnection({
+    host:'sql12.freemysqlhosting.net',
+    user: 'sql12382814',
+    password: 'Sa17rqBTlH',
+    database:'sql12382814'
+})
 const requireAuth = (req,res,next)=>{
     const token = req.cookies.jwt;
 
@@ -12,7 +18,23 @@ const requireAuth = (req,res,next)=>{
                 })
             }else{
                 console.log(decodedToken);
-                next();
+                /**********/
+                try{
+                    db.query('SELECT * FROM user WHERE id = ?',[decodedToken.id], async (error, results)=>{
+                        if(!results){
+                            res.status(401).render('login',{
+                                message: 'User not found',
+                            })
+                        }
+                        else{                         
+                           res.locals.user =results[0];
+                          next();
+                        }
+                    })
+                }catch(error){
+                    console.log(error);
+                }
+              
             }
         })
 
