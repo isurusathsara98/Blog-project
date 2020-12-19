@@ -59,17 +59,121 @@
             <div class="post__welcome">
                 <h3>Your posts</h3>
               </div>  
+              <div class="profile__details">
+                <h3>Upload a post</h3>
+                <% if(message) {%>
+                    <div class="reg__alert"> <%= message%> </div>
+                    <% console.log(message)%>
+                      <%}%>
+                <form action="/auth/upload" method="POST" role="form" enctype="multipart/form-data">
+                       
+                       <div class="form__input">
+                        <div class="post__label">
+                        <label for="Title">Title</label>
+                           <input type="text" id="title" name="title" placeholder="Title for post"
+                           required/> 
+                           </div>
+                       </div>
+
+                       <div class="form__input">
+                        <div class="post__label">
+                        <label for="content">Content</label>
+                           <input class="content__field" type="text" id="content" name="content" placeholder="Whats on your mind about the post"
+                           required/> 
+                           </div>
+                       </div>
+                       <div class="post__label">
+                        <label for="mob_no" class="col-md-3 control-label">Post an image</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="file" name="uploaded_image" accept="" required/>
+                        </div> 
+                       </div>
+
+                       <div class="form__input">
+                        <div class="post__label">
+                        <label for="content">Summary for viewers</label>
+                           <input class="content__field" type="text" id="summary" name="summary" placeholder="Summary for viewers"
+                           required/> 
+                           </div>
+                       </div>
+                     
+                       <div class="upload__button">
+                        <button type="submit">Upload post</button>     
+                    </div>
+                </form>
+            </div>
+            <div class="post__details">
+            <h3> Your previous posts</h3>
+        </div>
+        
+            <%  i = 0%>
+            <div class="post__list">
+            <% while(i < posts.length){%>
+                
+                    <div class="post__design">
+                        <% if(i < posts.length){%>
+                            <div class="post__cubes">
+                                <p><u> <%=posts[i].Title%></u></p> 
+                                  <p><%=posts[i].Sumary%></p>
+                                  <% if(posts[i].image){%>
+                                  <div class="post__img"> 
+                                      <img alt="post Pic" 
+                                      src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
+                                  </div>
+                                  <% } %>
+                              <h3>Delete   edit</h3>
+                                  
+                              </div>
+                    <%}%>
+                        <% i = i + 1%>
+                        <% if(i < posts.length){%>
+                            <div class="post__cubes">
+                                <p><u> <%=posts[i].Title%></u></p> 
+                                  <p><%=posts[i].Sumary%></p>
+                                  <% if(posts[i].image){%>
+                                  <div class="post__img"> 
+                                      <img alt="post Pic" 
+                                      src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
+                                  </div>
+                                  <% } %>
+                              <h3>Delete   edit</h3>
+                                  
+                              </div>
+                        <%}%>
+                                      <% i = i + 1%>
+                                      <% if(i < posts.length){%>
+                                        <div class="post__cubes">
+                                            <p><u> <%=posts[i].Title%></u></p> 
+                                              <p><%=posts[i].Sumary%></p>
+                                              <% if(posts[i].image){%>
+                                              <div class="post__img"> 
+                                                  <img alt="post Pic" 
+                                                  src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
+                                              </div>
+                                              <% } %>
+                                          <h3>Delete   edit</h3>
+                                              
+                                          </div>
+                                    <%}%>
+                                                  <% i = i + 1%>
+                                                </div>
+            <%console.log(i)%>
+        
+            <%}%>
+        
+        </div>
               
+            
               
-         </div>
-         <div class="profile__follower">
+        
+        <!---- <div class="profile__follower">
             <div class="follower__welcome">
                 <h3>Following</h3>
               </div> 
               <div class="detail__follower">
-                  <h3>sd</h3>
+                  
               </div>
-        </div>
+        </div>-->
          
 
     </div>

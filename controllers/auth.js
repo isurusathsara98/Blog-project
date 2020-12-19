@@ -40,7 +40,131 @@ exports.login= async (req, res)=>{
     }
     
 }
+exports.edit=async (req, res) =>{
+    const { fname, mname, lname, email, mobile, intro , currentpassword} = req.body;
+    id=res.locals.user.id;
+    db.query('SELECT * FROM user WHERE id = ?',[id], async (error, results)=>{
+    if(!(await bcrypt.compare(currentpassword, results[0].password))){
+        res.status(401).render('edit',{
+            message: 'Current password entered is incorrect',
+        })
+    }
+    else{
+    if(fname){
+        console.log("req.body");
+        db.query('UPDATE user SET firstname=? WHERE id=?',[fname, id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log(results);
+          
+            }
+        });
+    }
+    if(lname){
+        console.log("req.body");
+        db.query('UPDATE user SET lastname=? WHERE id=?',[lname, id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log(results);
+           
+            }
+        });
+    }
+    if(mname){
+        console.log("req.body");
+        db.query('UPDATE user SET middlename=? WHERE id=?',[mname, id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log(results);
+            
+            }
+        });
+    }
+    if(email || !(email==res.locals.user.email)){
+        console.log("req.body");
+        db.query('UPDATE user SET email=? WHERE id=?',[email, id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log(results);
+            }
+        });
+    }
+    if(mobile){
+        console.log("req.body");
+        db.query('UPDATE user SET mobile=? WHERE id=?',[mobile, id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log(results);
+           
+            }
+        });
+    }
+    if(intro){
+        console.log("req.body");
+        db.query('UPDATE user SET intro=? WHERE id=?',[intro, id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log(results);
+           
+            }
+        });
+    }
+    return res.render('profile',{
+        message:false,
+    })
+}
+    });
+}
+exports.upload = (req, res) =>{
+    
+     const { title, content, summary } = req.body;
+     if(req.files){
+        var file = req.files.uploaded_image;
+        var img_name=file.name;
+        if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
+                                 
+            file.mv('public/images/posts/'+file.name,async function(err){
+                if (err)
+                console.log(err);
+            });
+        }
+        db.query('INSERT INTO post SET ?',{Title: title,Sumary: summary, content: content, image:img_name, userID: res.locals.user.id},(error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+             return res.render('profile',{
+                 message:"Post sucessfully added",
+             })
+            }
+        }); 
+     }else{
+        db.query('INSERT INTO post SET ?',{Title: title,Sumary: summary, content: content, userID: res.locals.user.id},(error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+             return res.render('profile',{
+                 message:"Post sucessfully added",
+             })
+            }
+        }); 
+     }
+    
 
+}
 exports.register = (req, res)=>{
     const { fname, mname, lname, email, password, passwordconfirm, mobile, image} = req.body;
     db.query('SELECT email FROM user WHERE email=?',[email],async (error,results)=>{

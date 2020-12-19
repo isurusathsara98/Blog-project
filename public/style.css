@@ -206,6 +206,16 @@ nav>u1>li>a:hover{
     font-style:italic;
     margin-top:0.2vh;
 }
+.profile__details>form>h3{
+    font-size: 1.2vw;
+    font-style:italic;
+    text-decoration: underline;
+}
+.profile__details>form>p{
+    font-size: 1vw;
+    font-style:italic;
+    margin-top:0.2vh;
+}
 .detail_cont{
     font-size: 1vw;
     font-style:italic; 
@@ -241,6 +251,67 @@ nav>u1>li>a:hover{
     font-style:italic;
     margin-top:0.2vh;
 }
+.post__label{
+    display:flex;
+    justify-content: space-between;
+    margin:1.1vw;
+}
+.post__label>label{
+    margin-right:1.2vw;
+    font-size: 1vw;
+    font-style:italic;
+    margin-top:0.2vh;
+    
+}
+.post__label>input{
+    height:1vw;
+    width: 10vw;
+}
+.content__field{
+    height:3vw !important;
+    width: 20vw !important;
+}
+
+.upload__button{
+    display: grid;
+    place-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.upload__button>button{
+    width: 5vw;
+    height: 5vh;
+    background-color: lightblue;
+    cursor: pointer;
+    font-size: 0.8vw;
+}
+.upload__button>button:hover{
+    background-color: rgb(33, 116, 224);
+    font-size: 0.8vw;
+}
+
+.post__details{
+    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    margin-top: 1vh;
+
+}
+.post__details>h3{
+    font-size: 1.2vw;
+    font-style:italic;
+    text-decoration: underline;
+}
+.post__details>p{
+    font-size: 1vw;
+    font-style:italic;
+    margin-top:0.2vh;
+}
+
+
+
+
 
 /**************** Edit ****************/
 .edit__button{
@@ -259,4 +330,53 @@ nav>u1>li>a:hover{
 .edit__button>button:hover{
     background-color: rgb(33, 116, 224);
     font-size: 0.8vw;
+}
+
+/*****************post view*****************/
+
+.post__design{
+    display :flex;
+    place-items: center;
+    justify-content: space-around;
+    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
+}
+.post__cubes{
+    border-color:#023e8a;
+    border-width: 10px;
+    margin: 0.1vh 0.1vw 3vh 0.1vw;
+    background-color: white;
+    display: grid;
+    place-items: center;
+   
+
+}
+.post__cubes>p{
+    color:rgb(70, 2, 39);
+    margin-top:4px;
+    font-size: 1.2vw;
+    font-style: italic;
+    margin-left:0.3vw;
+    margin-right: 0.3vw;
+}
+.post__cubes>h3{
+    font-size: 1.2vw;
+    margin-top:0.1vw;
+}
+.post__img{
+    place-items: center;
+    border-radius: 999px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    
+}
+    
+
+.post__img>img{
+    width: 20vw;
+    height: 40vh;
+  
+    border-radius:50px;
+}
+.post__list{
+    display: grid;
 }

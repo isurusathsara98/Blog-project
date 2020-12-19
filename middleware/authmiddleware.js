@@ -28,9 +28,18 @@ const requireAuth = (req,res,next)=>{
                         }
                         else{                         
                            res.locals.user =results[0];
-                          next();
+                           db.query('SELECT * FROM post WHERE userID = ?',[decodedToken.id], async (error, results1)=>{
+                            if(!results1){
+                                   console.log(error);
+                            }else{
+                                res.locals.posts=results1;
+                                console.log("Refere"+res.locals.posts[0].id)
+                                next();
+                            }
+                        })
+                          
                         }
-                    })
+                    });
                 }catch(error){
                     console.log(error);
                 }
@@ -45,4 +54,5 @@ const requireAuth = (req,res,next)=>{
         })
     }
 }
+
 module.exports={requireAuth};
