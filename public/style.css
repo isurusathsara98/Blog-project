@@ -97,15 +97,14 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .form__button>button{
-    width: 7.5vw;
-    height: 4vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 1.2vw;
+    
 }
 .form__button>button:hover{
     background-color: rgb(33, 176, 224);
-    font-size: 1.1vw;
+    
 }
 .reg__alert{
     font-style: italic;
@@ -113,7 +112,7 @@ nav>u1>li>a:hover{
     background-color:rgb(255, 143, 143);
     place-items: center;
     display:grid;
-    font-size: 1.8vw;
+    
 }
 
 /********Profile styles*************/
@@ -182,7 +181,7 @@ nav>u1>li>a:hover{
   
 }
 .follower__welcome>h3{
-    font-size: 1.3vw;
+  
     margin-left: 4vw;
     margin-right: 4vw;  
 }
@@ -209,7 +208,7 @@ nav>u1>li>a:hover{
     text-decoration: underline;
 }
 .profile__details>form>p{
-    font-size: 1vw;
+   
     font-style:italic;
     margin-top:0.2vh;
 }
