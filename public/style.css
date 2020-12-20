@@ -273,8 +273,7 @@ nav>u1>li>a:hover{
 /*****************post view*****************/
 
 .post__design{
-    display :flex;
-    place-items: center;
+    display: grid;
     justify-content: space-around;
     background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
 }
@@ -283,15 +282,11 @@ nav>u1>li>a:hover{
     border-width: 10px;
     margin: 0.1vh 0.1vw 3vh 0.1vw;
     background-color: white;
-    display: grid;
-    place-items: center;
-   
 
 }
 .post__cubes>p{
     color:rgb(70, 2, 39);
     margin-top:4px;
-    font-size: 1.2vw;
     font-style: italic;
     margin-left:0.3vw;
     margin-right: 0.3vw;
@@ -299,7 +294,7 @@ nav>u1>li>a:hover{
     justify-content: center;
 }
 .post__cubes>h3{
-    font-size: 1.2vw;
+    
     margin-top:0.1vw;
 }
 .post__img{
@@ -334,11 +329,10 @@ nav>u1>li>a:hover{
     margin-right: 1vw;
 }
 .postedit__button>button{
-    width: 5vw;
-    height: 3.5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
     border-radius: 999px;
 }
 .postedit__button>button:hover{

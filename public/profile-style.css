@@ -3,5 +3,11 @@
         
         flex-direction: column;
     }
+    .post_cubes{
+        display: none;
+    }
     
+    .post__img>img{
+        width: 100%;
+    }
 }
