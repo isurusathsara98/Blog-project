@@ -8,7 +8,7 @@ body{
 
 nav>h3{
     color: #03045e;
-    font-size: 2.1vw;
+    
     display:flex;
     flex:1;
     margin-left: 47vw;
@@ -48,20 +48,16 @@ nav>u1>li>a:hover{
     color: white;
     text-align: justify;
 }
-.home_welcome>h1{
-    align-items: center;
-    justify-content: center;
-    display:flex;
+.home_welcome{
+    text-align: center;
     font-style:italic;
-    font-size: 1.9vw;
+    
 }
 .welcome_text{
     margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 10vh;
-    font-weight: 10vw;
-    display: flex;
-    font-size: 1.5vw;
+    text-align: justify;
 }
 
 
