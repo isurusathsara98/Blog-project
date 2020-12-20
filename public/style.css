@@ -6,13 +6,8 @@ body{
    
 }
 
-nav>h3{
-    color: #03045e;
-    
-    display:flex;
-    flex:1;
-    margin-left: 47vw;
-   
+nav>h1{
+    color: #3c096c;
 }
 nav>u1{
     display: flex;
