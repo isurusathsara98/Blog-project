@@ -3,6 +3,7 @@ body{
     /* background-image: url("https://www.wallpapertip.com/wmimgs/177-1774185_advice-article-background-beverage-blog-blogger-blogger-background.jpg")
     */
     font-family: 'Rubik';
+    overflow-x: hidden;
    
 }
 
@@ -96,15 +97,14 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .form__button>button{
-    width: 7.5vw;
-    height: 4vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 1.2vw;
+    
 }
 .form__button>button:hover{
     background-color: rgb(33, 176, 224);
-    font-size: 1.1vw;
+    
 }
 .reg__alert{
     font-style: italic;
@@ -112,7 +112,7 @@ nav>u1>li>a:hover{
     background-color:rgb(255, 143, 143);
     place-items: center;
     display:grid;
-    font-size: 1.8vw;
+    
 }
 
 /********Profile styles*************/
@@ -139,7 +139,7 @@ nav>u1>li>a:hover{
     align-items: center;
 }
 .profile__welcome>h3{
-    font-size: 1.3vw;
+    
     margin-left: 1vw;
     margin-right: 1vw;    
 }
@@ -155,9 +155,7 @@ nav>u1>li>a:hover{
     display:flex;
     justify-content: space-around;
 }
-.profile__sidebar{
-      
-}
+
 .profile__post{
     flex:1;
     margin-left: 1vw;
@@ -173,9 +171,7 @@ nav>u1>li>a:hover{
     margin-top: 1vh;
    
 }
-.post__welcome>h3{
-    font-size: 1.3vw;
-}
+
 .follower__welcome{
     color: #333381;
     display:grid;
@@ -185,7 +181,7 @@ nav>u1>li>a:hover{
   
 }
 .follower__welcome>h3{
-    font-size: 1.3vw;
+  
     margin-left: 4vw;
     margin-right: 4vw;  
 }
@@ -197,27 +193,27 @@ nav>u1>li>a:hover{
 
 }
 .profile__details>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
 .profile__details>p{
-    font-size: 1vw;
+    
     font-style:italic;
     margin-top:0.2vh;
 }
 .profile__details>form>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
 .profile__details>form>p{
-    font-size: 1vw;
+   
     font-style:italic;
     margin-top:0.2vh;
 }
 .detail_cont{
-    font-size: 1vw;
+    
     font-style:italic; 
     width:20vw;  
     margin-left: 2vw;
@@ -230,11 +226,10 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .detail__button>button{
-    width: 5vw;
-    height: 3.5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+   
 }
 .detail__button>button:hover{
     background-color: rgb(33, 116, 224);
@@ -247,7 +242,7 @@ nav>u1>li>a:hover{
     place-items: center;
 }
 .detail__follower>p{
-    font-size: 1vw;
+    
     font-style:italic;
     margin-top:0.2vh;
 }
@@ -258,19 +253,11 @@ nav>u1>li>a:hover{
 }
 .post__label>label{
     margin-right:1.2vw;
-    font-size: 1.5vw;
     font-style:italic;
     margin-top:0.2vh;
     
 }
-.post__label>input{
-    height:1vw;
-    width: 10vw;
-}
-.content__field{
-    height:3vw !important;
-    width: 20vw !important;
-}
+
 
 .upload__button{
     display: grid;
@@ -279,15 +266,14 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .upload__button>button{
-    width: 5vw;
-    height: 5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
 }
 .upload__button>button:hover{
     background-color: rgb(33, 116, 224);
-    font-size: 0.8vw;
+    
 }
 
 .post__details{
@@ -299,12 +285,10 @@ nav>u1>li>a:hover{
 
 }
 .post__details>h3{
-    font-size: 1.2vw;
     font-style:italic;
     text-decoration: underline;
 }
 .post__details>p{
-    font-size: 1vw;
     font-style:italic;
     margin-top:0.2vh;
 }
@@ -321,22 +305,20 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .edit__button>button{
-    width: 5vw;
-    height: 3.5vh;
+  
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
 }
 .edit__button>button:hover{
     background-color: rgb(33, 116, 224);
-    font-size: 0.8vw;
+    
 }
 
 /*****************post view*****************/
 
 .post__design{
-    display :flex;
-    place-items: center;
+    display: grid;
     justify-content: space-around;
     background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
 }
@@ -345,15 +327,11 @@ nav>u1>li>a:hover{
     border-width: 10px;
     margin: 0.1vh 0.1vw 3vh 0.1vw;
     background-color: white;
-    display: grid;
-    place-items: center;
-   
 
 }
 .post__cubes>p{
     color:rgb(70, 2, 39);
     margin-top:4px;
-    font-size: 1.2vw;
     font-style: italic;
     margin-left:0.3vw;
     margin-right: 0.3vw;
@@ -361,7 +339,7 @@ nav>u1>li>a:hover{
     justify-content: center;
 }
 .post__cubes>h3{
-    font-size: 1.2vw;
+    
     margin-top:0.1vw;
 }
 .post__img{
@@ -396,11 +374,10 @@ nav>u1>li>a:hover{
     margin-right: 1vw;
 }
 .postedit__button>button{
-    width: 5vw;
-    height: 3.5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
     border-radius: 999px;
 }
 .postedit__button>button:hover{
