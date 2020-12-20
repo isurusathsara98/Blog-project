@@ -165,11 +165,12 @@ exports.upload = (req, res) =>{
 
 }
 exports.register = (req, res)=>{
-    const { fname, mname, lname, email, password, passwordconfirm, mobile, image} = req.body;
+    const { fname, mname, lname, email, password, passwordconfirm, mobile} = req.body;
     db.query('SELECT email FROM user WHERE email=?',[email],async (error,results)=>{
         if(error){
             console.log(error);
         }
+        console.log(req.files);
         var file = req.files.uploaded_image;
         var img_name=file.name;
         if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
@@ -286,6 +287,115 @@ exports.delete = (req,res)=>{
         }
       });
 }
+
+exports.comment=(req, res)=>{
+
+    id=req.query.post;
+    
+    const { name, content} = req.body;
+    if(content==" ")
+    {
+        db.query('SELECT * FROM post WHERE id=?',[req.query.post],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+               
+                db.query('SELECT * FROM user WHERE id=?',[results[0].userID],async (error,results1)=>{
+                    if(error){
+                        console.log(error);
+                    }
+                    else{
+                        db.query('SELECT * FROM post_comment WHERE postID=?',[req.query.post],async (error,results2)=>{
+                            if(error){
+                                console.log(error);
+                            }
+                            else{
+                                
+                                res.render('postview',{qs: results[0], author: results1[0],comment:results2, message:"Comment cannot be blank"});
+                            }
+                        });
+                    }
+                });
+               
+            }
+        });
+    }
+    else{
+        db.query('INSERT INTO post_comment SET ?',{content: content, title: name, userID: res.locals.user.id, postID: id},(error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+                db.query('SELECT * FROM post WHERE id=?',[req.query.post],async (error,results)=>{
+                    if(error){
+                        console.log(error);
+                    }
+                    else{
+                       
+                        db.query('SELECT * FROM user WHERE id=?',[results[0].userID],async (error,results1)=>{
+                            if(error){
+                                console.log(error);
+                            }
+                            else{
+                                db.query('SELECT * FROM post_comment WHERE postID=?',[req.query.post],async (error,results2)=>{
+                                    if(error){
+                                        console.log(error);
+                                    }
+                                    else{
+                                        
+                                        res.render('postview',{qs: results[0], author: results1[0],comment:results2, message:"comment successfull"});
+                                    }
+                                });
+                            }
+                        });
+                       
+                    }
+                });
+
+            }
+        })
+    }
+}
+
+exports.deletecomment = (req, res)=>{
+    date=req.query.publish;
+    console.log(date);
+    db.query('DELETE from post_comment WHERE id=?',[date],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            db.query('SELECT * FROM post WHERE id=?',[req.query.post],async (error,results)=>{
+                if(error){
+                    console.log(error);
+                }
+                else{
+                   
+                    db.query('SELECT * FROM user WHERE id=?',[results[0].userID],async (error,results1)=>{
+                        if(error){
+                            console.log(error);
+                        }
+                        else{
+                            db.query('SELECT * FROM post_comment WHERE postID=?',[req.query.post],async (error,results2)=>{
+                                if(error){
+                                    console.log(error);
+                                }
+                                else{
+                                    
+                                    res.render('postview',{qs: results[0], author: results1[0],comment:results2, message:"comment successfull"});
+                                }
+                            });
+                        }
+                    });
+                   
+                }
+            });
+        }
+      });
+}
+
+
 module.exports.logout = (req, res)=>{
     
     res.cookie('jwt','',{maxAge:1});

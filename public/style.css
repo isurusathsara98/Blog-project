@@ -7,8 +7,13 @@ body{
    
 }
 
-nav>h1{
-    color: #5a189a;
+nav>h3{
+    color: #03045e;
+    font-size: 2.1vw;
+    display:flex;
+    flex:1;
+    margin-left: 47vw;
+   
 }
 nav>u1{
     display: flex;
@@ -44,22 +49,64 @@ nav>u1>li>a:hover{
     color: white;
     text-align: justify;
 }
-.home_welcome{
-    text-align: center;
+.home_welcome>h1{
+    align-items: center;
+    justify-content: center;
+    display:flex;
     font-style:italic;
-    
+    font-size: 1.9vw;
 }
 .welcome_text{
     margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 10vh;
-    text-align: justify;
+    font-weight: 10vw;
+    display: flex;
+    font-size: 1.5vw;
 }
 
+.register__form{
+    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    margin: 1vh 23vw 10vh 23vw;
 
-
-
-
+}
+.register__form>h1{
+    font-size: 1.9vw;
+    font-style: bold;
+}
+.form__input{
+    display: grid;
+    font-style: italic;
+    
+}
+.input__label{
+    display:flex;
+    justify-content: space-between;
+    margin:1.1vw;
+}
+.input__label>label{
+    margin-right:1.2vw;
+}
+.form__button{
+    display: grid;
+    place-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.form__button>button{
+    width: 7.5vw;
+    height: 4vh;
+    background-color: lightblue;
+    cursor: pointer;
+    font-size: 1.2vw;
+}
+.form__button>button:hover{
+    background-color: rgb(33, 176, 224);
+    font-size: 1.1vw;
+}
 .reg__alert{
     font-style: italic;
     margin: 5px;
@@ -384,4 +431,61 @@ nav>u1>li>a:hover{
     font-size: 1.5vw;
     margin-left:1vw;
 
+}
+
+/**************home sytle******************/
+.home__details{
+  
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    margin-top: 1vh;
+    background-color: rgb(125, 215, 245);
+   margin-bottom: 1vw;
+}
+.post__design>h3{
+    margin-top:20vh;
+    margin-bottom: 20vh;
+}
+
+/********************post view***********************/
+
+.post__view{
+    display: flex;
+    
+}
+.view__image{
+    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
+    display:flex;
+    flex-direction: column;
+
+    margin-top: 1vh;
+    flex:0.5;
+    margin-right: 0.5vw;
+}
+.view__image>p{
+    margin-left:2vw;
+}
+
+
+.view__content{
+    background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
+    margin-top: 1vh;
+    flex:0.5;
+    display:flex;
+    flex-direction: column;
+    margin-right: 0.5vw;
+}
+.view__content>p{
+    margin-left:2vw;
+}
+.comment__cube{
+    background-color: rgb(252, 201, 201);
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+.comment__cube>p{
+    margin-left: 0.5vw;
 }

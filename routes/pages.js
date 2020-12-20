@@ -1,5 +1,5 @@
 const express=require('express');
-const {requireAuth} = require('../middleware/authmiddleware');
+const {requireAuth, requireAuth1} = require('../middleware/authmiddleware');
 const router=express.Router();
 
 const mysql = require("mysql");
@@ -23,7 +23,7 @@ router.get('/register',(req,res)=>{
 router.get('/login',(req,res)=>{
     res.render('login',{message:false});
 });
-router.get('/home', requireAuth, (req,res)=>{
+router.get('/home', requireAuth1, (req,res)=>{
     res.render('home',{message:false});
 });
 router.get('/profile', requireAuth, (req,res)=>{
@@ -42,11 +42,38 @@ router.post('/edit_post', requireAuth ,(req,res)=>{
             console.log(error);
         }
         else{
-            console.log(results);
+            
             res.render('post_edit',{qs: results[0]});
         }
     });
   
 
+});
+router.post('/postview', requireAuth ,(req,res)=>{
+    db.query('SELECT * FROM post WHERE id=?',[req.query.post],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+           
+            db.query('SELECT * FROM user WHERE id=?',[results[0].userID],async (error,results1)=>{
+                if(error){
+                    console.log(error);
+                }
+                else{
+                    db.query('SELECT * FROM post_comment WHERE postID=?',[req.query.post],async (error,results2)=>{
+                        if(error){
+                            console.log(error);
+                        }
+                        else{
+                            
+                            res.render('postview',{qs: results[0], author: results1[0],comment:results2, message:false});
+                        }
+                    });
+                }
+            });
+           
+        }
+    });
 });
 module.exports= router;
