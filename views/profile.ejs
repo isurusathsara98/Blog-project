@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
     <link rel="stylesheet" href="/navbar-style.css">
+    <link rel="stylesheet" href="/profile-style.css">
     <title>Blog register</title>
 </head>
 <body>
@@ -44,7 +45,12 @@
                 <p> Mobile : <%=user.mobile%></p>
                 <p> Intro : 
                     <div class="detail_cont">
-                        <%=user.Intro%>
+                        <p>
+                            <b>
+                            <%=user.Intro%>
+
+                        </b>
+                        </p>
                     </div>                
                 </p>
 
@@ -80,7 +86,7 @@
                        <div class="form__input">
                         <div class="post__label">
                         <label for="content">Content</label>
-                           <input class="content__field" type="text" id="content" name="content" placeholder="Whats on your mind about the post"
+                           <input class="content__field" type="text" id="content" name="content" placeholder="Whats on your mind "
                            required/> 
                            </div>
                        </div>

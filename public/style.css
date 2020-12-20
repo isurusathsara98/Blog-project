@@ -3,11 +3,12 @@ body{
     /* background-image: url("https://www.wallpapertip.com/wmimgs/177-1774185_advice-article-background-beverage-blog-blogger-blogger-background.jpg")
     */
     font-family: 'Rubik';
+    overflow-x: hidden;
    
 }
 
 nav>h1{
-    color: #3c096c;
+    color: #5a189a;
 }
 nav>u1{
     display: flex;
@@ -92,7 +93,7 @@ nav>u1>li>a:hover{
     align-items: center;
 }
 .profile__welcome>h3{
-    font-size: 1.3vw;
+    
     margin-left: 1vw;
     margin-right: 1vw;    
 }
@@ -108,9 +109,7 @@ nav>u1>li>a:hover{
     display:flex;
     justify-content: space-around;
 }
-.profile__sidebar{
-      
-}
+
 .profile__post{
     flex:1;
     margin-left: 1vw;
@@ -126,9 +125,7 @@ nav>u1>li>a:hover{
     margin-top: 1vh;
    
 }
-.post__welcome>h3{
-    font-size: 1.3vw;
-}
+
 .follower__welcome{
     color: #333381;
     display:grid;
@@ -150,17 +147,17 @@ nav>u1>li>a:hover{
 
 }
 .profile__details>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
 .profile__details>p{
-    font-size: 1vw;
+    
     font-style:italic;
     margin-top:0.2vh;
 }
 .profile__details>form>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
@@ -170,7 +167,7 @@ nav>u1>li>a:hover{
     margin-top:0.2vh;
 }
 .detail_cont{
-    font-size: 1vw;
+    
     font-style:italic; 
     width:20vw;  
     margin-left: 2vw;
@@ -183,11 +180,10 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .detail__button>button{
-    width: 5vw;
-    height: 3.5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+   
 }
 .detail__button>button:hover{
     background-color: rgb(33, 116, 224);
@@ -211,19 +207,11 @@ nav>u1>li>a:hover{
 }
 .post__label>label{
     margin-right:1.2vw;
-    font-size: 1vw;
     font-style:italic;
     margin-top:0.2vh;
     
 }
-.post__label>input{
-    height:1vw;
-    width: 10vw;
-}
-.content__field{
-    height:3vw !important;
-    width: 20vw !important;
-}
+
 
 .upload__button{
     display: grid;
@@ -232,15 +220,14 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .upload__button>button{
-    width: 5vw;
-    height: 5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
 }
 .upload__button>button:hover{
     background-color: rgb(33, 116, 224);
-    font-size: 0.8vw;
+    
 }
 
 .post__details{
@@ -252,12 +239,10 @@ nav>u1>li>a:hover{
 
 }
 .post__details>h3{
-    font-size: 1.2vw;
     font-style:italic;
     text-decoration: underline;
 }
 .post__details>p{
-    font-size: 1vw;
     font-style:italic;
     margin-top:0.2vh;
 }
