@@ -14,4 +14,6 @@ router.post('/editpost',requireAuth ,authController.editpost);
 router.post('/delete',requireAuth ,authController.delete);
 router.post('/comment',requireAuth ,authController.comment);
 router.post('/deletecomment',requireAuth ,authController.deletecomment);
+router.post('/like',requireAuth ,authController.like);
+router.post('/unlike',requireAuth ,authController.unlike);
 module.exports= router;
