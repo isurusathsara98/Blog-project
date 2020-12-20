@@ -36,7 +36,11 @@
             </div>
 
     </div>
+    <%if(comment.length>0){%>
     <p><b><u>Comments about the Blog</u></b></p>
+   <% }else{%>
+    <p><b>No comments yet. Be the first to comment</b></p>
+   <%}%>
 <% i=0%>
 <% while(i< comment.length){%>
     <%if(comment[i].userID!=user.id){%>
@@ -63,8 +67,10 @@
     <%}%>
     </div>
     <div class="view__content">
+        <p style="color:rebeccapurple"><%=count.length%> Likes </p>
           <p><b>Author of the blog : <%=author.firstname%> <%=author.lastname%></b></p>
           <p><b>Published on <%=qs.Published%></b></p>
+          <p><b> Content type : <%=qs.category%></b></p>
            <p><b>Title  :  <%=qs.Title%></b></p><br>
            <p><b><u>summary</u> </b>  </p><p><%=qs.Sumary%></p>
           <br> <p><b><u>Content</u></b> </p><p> <%=qs.content%></p>

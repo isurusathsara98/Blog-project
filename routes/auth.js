@@ -16,4 +16,6 @@ router.post('/comment',requireAuth ,authController.comment);
 router.post('/deletecomment',requireAuth ,authController.deletecomment);
 router.post('/like',requireAuth ,authController.like);
 router.post('/unlike',requireAuth ,authController.unlike);
+router.post('/search',requireAuth ,authController.search);
+router.post('/loginview',requireAuth ,authController.loginview);
 module.exports= router;

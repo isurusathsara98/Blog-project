@@ -347,7 +347,8 @@ nav>u1>li>a:hover{
     background-color: white;
     display: grid;
     place-items: center;
-   
+    max-width : 22vw;
+    word-wrap: break-word;
 
 }
 .post__cubes>p{
@@ -509,4 +510,40 @@ nav>u1>li>a:hover{
 }
 .comment__cube>p{
     margin-left: 0.5vw;
+}
+
+/**************home search************/
+.home__search{
+    justify-content: center;
+    
+}
+.home__search>form{
+    background-color: rgb(156, 223, 214);
+    display:flex;
+    place-content: center;
+    justify-content: center;
+}
+.post__label>select{
+  height: 3vw;
+  border-radius: 999px;
+}
+.search__button{
+    display: grid;
+    place-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+.search__button>button{
+    width: 8vw;
+    height: 5vh;
+    background-color: rgb(158, 203, 240);
+    cursor: pointer;
+    font-size: 1.2vw;
+    border-radius: 999px;
+   
+}
+.search__button>button:hover{
+    background-color: transparent;
+    font-style: italic;
+    
 }

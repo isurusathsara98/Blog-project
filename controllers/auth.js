@@ -126,7 +126,14 @@ exports.edit=async (req, res) =>{
 }
 exports.upload = (req, res) =>{
     
-     const { title, content, summary } = req.body;
+     const { title, content, summary, category} = req.body;
+     if(category =="select")
+     {
+        res.render('profile',{
+            message: 'Please select a category',
+        })
+     }
+     else{
      if(req.files){
         var file = req.files.uploaded_image;
         var img_name=file.name;
@@ -137,7 +144,7 @@ exports.upload = (req, res) =>{
                 console.log(err);
             });
         }
-        db.query('INSERT INTO post SET ?',{Title: title,Sumary: summary, content: content, image:img_name, userID: res.locals.user.id},(error,results)=>{
+        db.query('INSERT INTO post SET ?',{Title: title,Sumary: summary, content: content, image:img_name, userID: res.locals.user.id, category: category},(error,results)=>{
             if(error){
                 console.log(error);
             }
@@ -147,16 +154,16 @@ exports.upload = (req, res) =>{
         }); 
      }
      
-    
+     }
 
 }
 exports.register = (req, res)=>{
-    const { fname, mname, lname, email, password, passwordconfirm, mobile} = req.body;
+    const { fname, mname, lname, email, password, passwordconfirm, mobile, intro} = req.body;
     db.query('SELECT email FROM user WHERE email=?',[email],async (error,results)=>{
         if(error){
             console.log(error);
         }
-        console.log(req.files);
+       
         var file = req.files.uploaded_image;
         var img_name=file.name;
         if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
@@ -180,7 +187,7 @@ exports.register = (req, res)=>{
                        let hashedPassword = await bcrypt.hash(password, 8);
                        console.log(hashedPassword);
                 
-                       db.query('INSERT INTO user SET ?',{firstname: fname, middlename:mname, lastname: lname, email:email, mobile:mobile, password:hashedPassword, profileImage:img_name},(error,results)=>{
+                       db.query('INSERT INTO user SET ?',{firstname: fname, middlename:mname, lastname: lname, email:email, mobile:mobile, password:hashedPassword, profileImage:img_name, Intro:intro},(error,results)=>{
                            if(error){
                                console.log(error);
                            }
@@ -205,8 +212,8 @@ exports.editpost=(req,res)=>{
   id=req.query.post;
   
 
-  const { title, summary, content} = req.body;
-  console.log(req.body);
+  const { title, summary, content, category} = req.body;
+
   if(title){
     db.query('UPDATE post SET Title=? WHERE id=?',[title, id],async (error,results)=>{
         if(error){
@@ -227,6 +234,13 @@ exports.editpost=(req,res)=>{
   }
   if(summary && summary!=" "){
     db.query('UPDATE post SET Sumary=? WHERE id=?',[summary, id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+  }
+  if(category){
+    db.query('UPDATE post SET category=? WHERE id=?',[category, id],async (error,results)=>{
         if(error){
             console.log(error);
         }
@@ -399,6 +413,29 @@ exports.unlike=(req,res)=>{
             res.redirect('/home');
         }
     })
+}
+exports.loginview=(req,res)=>{
+    res.render('login',{
+        message: "Login to view the blogs",
+    })
+}
+exports.search=(req, res)=>{
+    const {category}=req.body;
+    console.log(category);
+    if(category=="select"){
+        res.redirect('/home');
+    }
+    else{
+        db.query('SELECT * FROM post WHERE category=? AND userID!=?',[category , res.locals.user.id],async (error,results)=>{
+            if(error){
+                console.log(error);
+            }
+            else{
+               res
+            }
+        });
+
+    }
 }
 
 module.exports.logout = (req, res)=>{
