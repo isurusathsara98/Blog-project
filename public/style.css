@@ -78,9 +78,9 @@ nav>u1>li>a:hover{
 }
 .image>img{
     width: 4vw;
-    height: 4vh;
+    height: 8vh;
     align-items: center;
-    border-radius:50px;
+    
     margin-top:0.6vh; 
     margin-bottom: 0.6vh;
     margin-left: 1vw;
@@ -295,6 +295,8 @@ nav>u1>li>a:hover{
     font-style: italic;
     margin-left:0.3vw;
     margin-right: 0.3vw;
+    place-items: center;
+    justify-content: center;
 }
 .post__cubes>h3{
     font-size: 1.2vw;
@@ -317,4 +319,75 @@ nav>u1>li>a:hover{
 }
 .post__list{
     display: grid;
+}
+.cube__buttons{
+    display:flex;
+    justify-content: space-between;
+}
+
+.postedit__button{
+    display: grid;
+    place-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+.postedit__button>button{
+    width: 5vw;
+    height: 3.5vh;
+    background-color: lightblue;
+    cursor: pointer;
+    font-size: 0.8vw;
+    border-radius: 999px;
+}
+.postedit__button>button:hover{
+    background-color: rgb(33, 116, 224);
+    font-size: 0.8vw;
+}
+.postedit__img{
+    place-items: center;
+    border-radius: 999px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: space-around;
+}
+    
+.postedit__img>img{
+    width: 30vw;
+    height: 80vh;
+  
+    border-radius:10px;
+}
+.register__form>p{
+    font-size: 1.1vw;
+    background-color: rgb(240, 172, 172);
+    font-style: italic;
+}
+
+.post__labelcontent{
+    display:flex;
+    justify-content: space-between;
+    margin:1.1vw;
+}
+.post__labelcontent>label{
+    margin-right:1.2vw;
+    font-size: 1vw;
+    font-style:italic;
+    margin-top:0.2vh;
+    
+}
+.post__labelcontent>textarea{
+    height:20vw !important;
+    width: 40vw !important;
+}
+.post__label>textarea{
+    height:5vw !important;
+    width: 40vw !important;
+}
+.register__form>form>p{
+    font-size: 1.5vw;
+    margin-left:1vw;
+
 }
