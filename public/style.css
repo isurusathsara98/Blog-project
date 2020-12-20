@@ -242,7 +242,7 @@ nav>u1>li>a:hover{
     place-items: center;
 }
 .detail__follower>p{
-    font-size: 1vw;
+    
     font-style:italic;
     margin-top:0.2vh;
 }
@@ -305,15 +305,14 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .edit__button>button{
-    width: 5vw;
-    height: 3.5vh;
+  
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
 }
 .edit__button>button:hover{
     background-color: rgb(33, 116, 224);
-    font-size: 0.8vw;
+    
 }
 
 /*****************post view*****************/
