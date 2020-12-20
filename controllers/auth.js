@@ -51,7 +51,6 @@ exports.edit=async (req, res) =>{
     }
     else{
     if(fname){
-        console.log("req.body");
         db.query('UPDATE user SET firstname=? WHERE id=?',[fname, id],async (error,results)=>{
             if(error){
                 console.log(error);
@@ -215,6 +214,78 @@ exports.register = (req, res)=>{
 
 }
 
+exports.editpost=(req,res)=>{
+  id=req.query.post;
+  
+
+  const { title, summary, content} = req.body;
+  console.log(req.body);
+  if(title){
+    db.query('UPDATE post SET Title=? WHERE id=?',[title, id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            
+      
+        }
+    });
+  }
+  if(content && content!=" "){
+    db.query('UPDATE post SET content=? WHERE id=?',[content, id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+  }
+  if(summary && summary!=" "){
+    db.query('UPDATE post SET Sumary=? WHERE id=?',[summary, id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+  }
+  if(req.files){
+    var file = req.files.uploaded_image;
+    var img_name=file.name;
+    if(file.mimetype == "image/jpeg" ||file.mimetype == "image/png"||file.mimetype == "image/gif" ){
+                                 
+        file.mv('public/images/posts/'+file.name,async function(err){
+            if (err)
+            console.log(err);
+        });
+    }
+    db.query('UPDATE post SET image=? WHERE id=?',[img_name, id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+    });
+}
+let date_ob = new Date();
+db.query('UPDATE post SET updatedAt=? WHERE id=?',[date_ob, id],async (error,results)=>{
+  if(error){
+      console.log(error);
+  }
+});
+    return res.render('profile',{
+        message:"post edited sucessfully",
+    })
+  
+
+}
+exports.delete = (req,res)=>{
+    id = req.query.post;
+    db.query('DELETE from post WHERE id=?',[id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            return res.render('profile',{
+                message:"post deleted sucessfully",
+            })
+        }
+      });
+}
 module.exports.logout = (req, res)=>{
     
     res.cookie('jwt','',{maxAge:1});

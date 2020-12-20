@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Blog post</title>
+</head>
+<body>
+    <nav> 
+        <h3>Blog</h3>
+        <u1 class="nav-links">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </u1>
+     <div class="burger">
+         <div class="line1"></div>
+         <div class="line2"></div>
+         <div class="line3"></div>
+         
+     </div>
+    </nav>
+
+   <div class="register__form">
+       <h1><u>Edit post <%=qs.Title%></u></h1>
+      <p>Only edit the fields you want to edit and leave others as blank</p>
+       <form action="/auth/editpost?post=<%=qs.id%>" method="POST" role="form" enctype="multipart/form-data">
+        <p>Published on 
+            <%=qs.Published%></p>
+    <%    if(qs.updatedAt){%>
+      <p>Recently updated on <%=qs.updatedAt%></p>
+      <%}%>
+           <div class="form__input">
+            <div class="postedit__img"> 
+                <img alt="post Pic" 
+                src="http://localhost:3000/images/posts/<%=qs.image%>" class="img-circle img-responsive"> 
+            </div>
+
+            <div class="post__label">
+                <label for="mob_no" class="col-md-3 control-label">Change blog post image</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="file" name="uploaded_image" accept=""/>
+                </div> 
+               </div>
+
+               <div class="form__input">
+                <div class="post__label">
+            <label for="title">Title : </label>
+               <input type="text" id="title" name="title" placeholder="<%=qs.Title%>"
+               /> 
+               </div></div>
+               <div class="form__input">
+                <div class="post__label">
+                <label for="content">Current Content : </label>
+    
+                <label for="content"><%=qs.content%></label>
+                </div>
+            </div>
+               <div class="form__input">
+                <div class="post__label">
+                <label for="content">Edit Content : </label>
+            </div>
+        </div>
+        <div class="form__input">
+            <div class="post__labelcontent">
+                   <textarea type="text" id="content" name="content" placeholder="<%=qs.content%>"
+                   required> </textarea>
+                </div>
+            </div>
+                 
+            <div class="form__input">
+                <div class="post__label">
+                <label for="content">Current Summary : </label>
+    
+                <label for="content"><%=qs.Sumary%></label>
+                </div>
+            </div>
+
+               <div class="form__input">
+                <div class="post__label">
+                <label for="content">Edit Summary for viewers</label>
+            </div>
+        </div>
+        <div class="form__input">
+            <div class="post__label">
+                   <textarea class="content__field" type="text" id="summary" value="cat" name="summary" placeholder="<%=qs.Sumary%>"
+                   required> </textarea>
+                </div>
+            </div>
+                
+            </div>
+            
+            <div class="edit__button">
+                <button type="submit">Edit</button>     
+            </div>
+                    
+         
+       </form>
+
+      
+   </div>
+
+   <script>
+    const navSlide=()=>{
+        const burger=document.querySelector('.burger');
+        const nav= document.querySelector('.nav-links');
+        const navLinks=document.querySelectorAll('.nav-links li')
+        burger.addEventListener('click',()=>{
+            nav.classList.toggle('nav-active');
+            navLinks.forEach((link,index)=>{
+            if(link.style.animation){
+                link.style.animation='';
+            }
+            else{
+                link.style.animation=`navLinkFade 0.5s ease forwards ${index/7+.5}s`;
+            }
+        })
+        })
+        
+    }
+    navSlide();
+</script>
+</body>
+</html>

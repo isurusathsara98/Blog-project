@@ -121,7 +121,20 @@
                                       src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
                                   </div>
                                   <% } %>
-                              <h3>Delete   edit</h3>
+                                 
+                                 
+                                  <div class="cube__buttons">
+                                  <form action="/auth/delete?post=<%=posts[i].id%>" method="POST">
+                                    <div class="postedit__button">
+                                        <button type="submit">delete</button>     
+                                    </div>
+                                </form>
+                                <form action="/edit_post?post=<%=posts[i].id%>" method="POST">
+                                    <div class="postedit__button">
+                                        <button type="submit">Edit</button>     
+                                    </div>
+                                </form>
+                              </div>
                                   
                               </div>
                     <%}%>
@@ -136,7 +149,18 @@
                                       src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
                                   </div>
                                   <% } %>
-                              <h3>Delete   edit</h3>
+                                  <div class="cube__buttons">
+                                    <form action="/auth/delete?post=<%=posts[i].id%>" method="POST">
+                                      <div class="postedit__button">
+                                          <button type="submit">delete</button>     
+                                      </div>
+                                  </form>
+                                  <form action="/edit_post?post=<%=posts[i].id%>" method="POST">
+                                      <div class="postedit__button">
+                                          <button type="submit">Edit</button>     
+                                      </div>
+                                  </form>
+                                </div>
                                   
                               </div>
                         <%}%>
@@ -151,13 +175,24 @@
                                                   src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
                                               </div>
                                               <% } %>
-                                          <h3>Delete   edit</h3>
+                                              <div class="cube__buttons">
+                                                <form action="/auth/delete?post=<%=posts[i].id%>" method="POST">
+                                                  <div class="postedit__button">
+                                                      <button type="submit">delete</button>     
+                                                  </div>
+                                              </form>
+                                              <form action="/edit_post?post=<%=posts[i].id%>" method="POST">
+                                                  <div class="postedit__button">
+                                                      <button type="submit">Edit</button>     
+                                                  </div>
+                                              </form>
+                                            </div>
                                               
                                           </div>
                                     <%}%>
                                                   <% i = i + 1%>
                                                 </div>
-            <%console.log(i)%>
+
         
             <%}%>
         
