@@ -13,13 +13,16 @@ router.get('/register',(req,res)=>{
 router.get('/login',(req,res)=>{
     res.render('login',{message:false});
 });
-router.get('/home', requireAuth ,(req,res)=>{
+router.get('/home', requireAuth, (req,res)=>{
     res.render('home',{message:false});
 });
-router.get('/profile', requireAuth ,(req,res)=>{
+router.get('/profile', requireAuth, (req,res)=>{
     res.render('profile',{message:false});
 });
 router.get('/logout', requireAuth ,(req,res)=>{
-    res.render('profile',{message:false});
+    res.render('login',{message:false});
+});
+router.post('/edit', requireAuth ,(req,res)=>{
+    res.render('edit',{message:"Leave any detail as it is if changes are not required"});
 });
 module.exports= router;

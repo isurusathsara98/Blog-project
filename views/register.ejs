@@ -25,6 +25,7 @@
      </div>
     </nav>
 
+<<<<<<< HEAD
    <div class="registerform-container">
        <div class="right">
  <div class="register_title">
@@ -32,6 +33,11 @@
 
        </div>
        <form action="/auth/register" method="POST">
+=======
+   <div class="register__form">
+       <h1>Register</h1>
+       <form action="/auth/register" method="POST" role="form" enctype="multipart/form-data">
+>>>>>>> origin/main
            <div class="form__input">
             <div class="input__label">
             <label for="firstname">First name</label><br>
@@ -87,10 +93,22 @@
                 </div>
 
                <div class="input__label">
+<<<<<<< HEAD
                <label for="mobile">Mobile</label><br>
                <div class="input_cover">
                 <input type="integer" id="mobile" name="mobile" placeholder="Mobile number"
                 required/>
+=======
+               <label for="mobile">Mobile</label>
+               <input type="integer" id="mobile" name="mobile" placeholder="Mobile number"
+               required/> 
+            </div>
+               <div class="input__label">
+                <label for="mob_no" class="col-md-3 control-label">Profile Image</label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="file" name="uploaded_image" accept=""/>
+                </div> 
+>>>>>>> origin/main
                </div>
                 
                </div>
@@ -98,7 +116,6 @@
             </div>
             <% if(message) {%>
                 <div class="reg__alert"> <%= message%> </div>
-                <% console.log(message)%>
                   <%}%>
             <div class="form__button">
                 <button type="submit">Register</button>     
