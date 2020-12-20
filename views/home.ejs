@@ -23,8 +23,111 @@
          
      </div>
     </nav>
-  
-   
+    <div class="home__details">
+        <h3> Welcome to view popular blogs</h3>
+    </div>
+    <%  i = 0%>
+    <div class="post__list">
+        <%if(posts.length==0){%>
+            <div class="post__design">
+            <h3>No posts available</h3>
+            </div>
+       <% }%>
+    <% while(i < posts.length){%>
+        
+            <div class="post__design">
+                <% if(i < posts.length){%>
+                    <div class="post__cubes">
+                        <p><u> <%=posts[i].Title%></u></p> 
+                          <p><%=posts[i].Sumary%></p>
+                          <% if(posts[i].image){%>
+                          <div class="post__img"> 
+                              <img alt="post Pic" 
+                              src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
+                          </div>
+                          <% } %>
+                         
+                         
+                          <div class="cube__buttons">
+                            <form action="/postview?post=<%=posts[i].id%>" method="POST">
+                                <div class="postedit__button">
+                                    <button type="submit">view</button>     
+                                </div>
+                            </form>
+                          <form action="/auth/delete?post=<%=posts[i].id%>" method="POST">
+                            <div class="postedit__button">
+                                <button type="submit">like</button>     
+                            </div>
+                        </form>
+                       
+                      </div>
+                          
+                      </div>
+            <%}%>
+                <% i = i + 1%>
+                <% if(i < posts.length){%>
+                    <div class="post__cubes">
+                        <p><u> <%=posts[i].Title%></u></p> 
+                          <p><%=posts[i].Sumary%></p>
+                          <% if(posts[i].image){%>
+                          <div class="post__img"> 
+                              <img alt="post Pic" 
+                              src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
+                          </div>
+                          <% } %>
+                          <div class="cube__buttons">
+                            <form action="/postview?post=<%=posts[i].id%>" method="POST">
+                                <div class="postedit__button">
+                                    <button type="submit">view</button>     
+                                </div>
+                            </form>
+
+                            <form action="/auth/delete?post=<%=posts[i].id%>" method="POST">
+                              <div class="postedit__button">
+                                  <button type="submit">like</button>     
+                              </div>
+                          </form>
+                        
+                        </div>
+                          
+                      </div>
+                <%}%>
+                              <% i = i + 1%>
+                              <% if(i < posts.length){%>
+                                <div class="post__cubes">
+                                    <p><u> <%=posts[i].Title%></u></p> 
+                                      <p><%=posts[i].Sumary%></p>
+                                      <% if(posts[i].image){%>
+                                      <div class="post__img"> 
+                                          <img alt="post Pic" 
+                                          src="http://localhost:3000/images/posts/<%=posts[i].image%>" class="img-circle img-responsive"> 
+                                      </div>
+                                      <% } %>
+                                      <div class="cube__buttons">
+
+                                        <form action="/postview?post=<%=posts[i].id%>" method="POST">
+                                            <div class="postedit__button">
+                                                <button type="submit">view</button>     
+                                            </div>
+                                        </form>
+
+
+                                        <form action="/auth/delete?post=<%=posts[i].id%>" method="POST">
+                                          <div class="postedit__button">
+                                              <button type="submit">like</button>     
+                                          </div>
+                                      </form>
+                                    </div>
+                                      
+                                  </div>
+                            <%}%>
+                                          <% i = i + 1%>
+                                        </div>
+
+
+    <%}%>
+
+</div>
 
    <script>
     const navSlide=()=>{

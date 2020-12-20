@@ -80,8 +80,8 @@
                        <div class="form__input">
                         <div class="post__label">
                         <label for="content">Content</label>
-                           <input class="content__field" type="text" id="content" name="content" placeholder="Whats on your mind about the post"
-                           required/> 
+                           <textarea class="content__field" type="text" id="content" name="content" placeholder="Whats on your mind about the post"
+                           required> </textarea>
                            </div>
                        </div>
                        <div class="post__label">
@@ -107,12 +107,17 @@
             <div class="post__details">
             <h3> Your previous posts</h3>
         </div>
-        
+        <%if(posts.length==0){%>
+            <div class="post__design">
+            <h3>You haven't still uploaded any posts</h3>
+            </div>
+       <% }%>
             <%  i = 0%>
             <div class="post__list">
             <% while(i < posts.length){%>
                 
                     <div class="post__design">
+
                         <% if(i < posts.length){%>
                             <div class="post__cubes">
                                 <p><u> <%=posts[i].Title%></u></p> 
