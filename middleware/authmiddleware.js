@@ -68,7 +68,7 @@ const requireAuth1 = (req,res,next)=>{
                 console.log(decodedToken);
                 /**********/
                 try{
-                    db.query('SELECT * FROM post WHERE userID = ?',[decodedToken.id], async (error, results)=>{
+                    db.query('SELECT * FROM user WHERE id= ?',[decodedToken.id], async (error, results)=>{
                         if(!results){
                             res.status(401).render('login',{
                                 message: 'User not found',

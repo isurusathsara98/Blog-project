@@ -120,9 +120,7 @@ exports.edit=async (req, res) =>{
             }
         });
     }
-    return res.render('profile',{
-        message:false,
-    })
+    res.redirect('/profile');
 }
     });
 }
@@ -144,23 +142,11 @@ exports.upload = (req, res) =>{
                 console.log(error);
             }
             else{
-             return res.render('profile',{
-                 message:"Post sucessfully added",
-             })
-            }
-        }); 
-     }else{
-        db.query('INSERT INTO post SET ?',{Title: title,Sumary: summary, content: content, userID: res.locals.user.id},(error,results)=>{
-            if(error){
-                console.log(error);
-            }
-            else{
-             return res.render('profile',{
-                 message:"Post sucessfully added",
-             })
+           res.redirect('/profile');
             }
         }); 
      }
+     
     
 
 }
@@ -268,9 +254,7 @@ db.query('UPDATE post SET updatedAt=? WHERE id=?',[date_ob, id],async (error,res
       console.log(error);
   }
 });
-    return res.render('profile',{
-        message:"post edited sucessfully",
-    })
+res.redirect('/profile');
   
 
 }
@@ -281,9 +265,7 @@ exports.delete = (req,res)=>{
             console.log(error);
         }
         else{
-            return res.render('profile',{
-                message:"post deleted sucessfully",
-            })
+            res.redirect('/profile');
         }
       });
 }
@@ -395,9 +377,32 @@ exports.deletecomment = (req, res)=>{
       });
 }
 
+exports.like=(req,res)=>{
+    id=req.query.post;
+    db.query('INSERT INTO folowers SET ?',{userID: res.locals.user.id, postID: id},(error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            res.redirect('/home');
+        }
+    })
+}
+
+exports.unlike=(req,res)=>{
+    id=req.query.post;
+    db.query('DELETE from folowers WHERE postID=? AND UserID=?',[id, res.locals.user.id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+            res.redirect('/home');
+        }
+    })
+}
 
 module.exports.logout = (req, res)=>{
     
     res.cookie('jwt','',{maxAge:1});
-    res.redirect('/');;
+    res.redirect('/');
 }

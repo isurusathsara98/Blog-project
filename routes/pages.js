@@ -24,7 +24,15 @@ router.get('/login',(req,res)=>{
     res.render('login',{message:false});
 });
 router.get('/home', requireAuth1, (req,res)=>{
-    res.render('home',{message:false});
+    db.query('SELECT * FROM folowers WHERE UserID=?',[res.locals.user.id],async (error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        else{
+        res.render('home',{like:results,message:false});
+        }
+    });
+   
 });
 router.get('/profile', requireAuth, (req,res)=>{
     res.render('profile',{message:false});
