@@ -44,16 +44,16 @@ nav>u1>li>a:hover{
 }
 .home_welcome{
     background-color: #023e8a;
-    margin:1vh 10vw 10vh 10vw;
+    margin:1vh 1vw 5vh 1vw;
     color: white;
     text-align: justify;
 }
-.home_welcome>h1{
+.home_welcome>h3{
     align-items: center;
     justify-content: center;
     display:flex;
     font-style:italic;
-    font-size: 1.9vw;
+    
 }
 .welcome_text{
     margin-left: 10vw;
@@ -61,7 +61,7 @@ nav>u1>li>a:hover{
     margin-bottom: 10vh;
     font-weight: 10vw;
     display: flex;
-    font-size: 1.5vw;
+    
 }
 
 .register__form{
@@ -96,11 +96,11 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .form__button>button{
-    width: 7.5vw;
-    height: 4vh;
+    
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 1.2vw;
+    
 }
 .form__button>button:hover{
     background-color: rgb(33, 176, 224);
@@ -139,7 +139,7 @@ nav>u1>li>a:hover{
     align-items: center;
 }
 .profile__welcome>h3{
-    font-size: 1.3vw;
+    
     margin-left: 1vw;
     margin-right: 1vw;    
 }
@@ -173,9 +173,7 @@ nav>u1>li>a:hover{
     margin-top: 1vh;
    
 }
-.post__welcome>h3{
-    font-size: 1.3vw;
-}
+
 .follower__welcome{
     color: #333381;
     display:grid;
@@ -197,27 +195,27 @@ nav>u1>li>a:hover{
 
 }
 .profile__details>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
 .profile__details>p{
-    font-size: 1vw;
+    
     font-style:italic;
     margin-top:0.2vh;
 }
 .profile__details>form>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
 .profile__details>form>p{
-    font-size: 1vw;
+    
     font-style:italic;
     margin-top:0.2vh;
 }
 .detail_cont{
-    font-size: 1vw;
+    
     font-style:italic; 
     width:20vw;  
     margin-left: 2vw;
@@ -230,15 +228,14 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .detail__button>button{
-    width: 5vw;
-    height: 3.5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
 }
 .detail__button>button:hover{
     background-color: rgb(33, 116, 224);
-    font-size: 0.8vw;
+    
 }
 .detail__follower{
     background-image: url("https://images.wallpaperscraft.com/image/light_background_texture_69531_3840x2160.jpg");
@@ -258,19 +255,13 @@ nav>u1>li>a:hover{
 }
 .post__label>label{
     margin-right:1.2vw;
-    font-size: 1.5vw;
+    
     font-style:italic;
     margin-top:0.2vh;
     
 }
-.post__label>input{
-    height:1vw;
-    width: 10vw;
-}
-.content__field{
-    height:3vw !important;
-    width: 20vw !important;
-}
+
+
 
 .upload__button{
     display: grid;
@@ -279,11 +270,10 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .upload__button>button{
-    width: 5vw;
-    height: 5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
 }
 .upload__button>button:hover{
     background-color: rgb(33, 116, 224);
@@ -299,7 +289,7 @@ nav>u1>li>a:hover{
 
 }
 .post__details>h3{
-    font-size: 1.2vw;
+    
     font-style:italic;
     text-decoration: underline;
 }
@@ -354,7 +344,7 @@ nav>u1>li>a:hover{
 .post__cubes>p{
     color:rgb(70, 2, 39);
     margin-top:4px;
-    font-size: 1.2vw;
+    
     font-style: italic;
     margin-left:0.3vw;
     margin-right: 0.3vw;
@@ -391,22 +381,18 @@ nav>u1>li>a:hover{
 .postedit__button{
     display: grid;
     place-items: center;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    
 }
 .postedit__button>button{
-    width: 5vw;
-    height: 3.5vh;
+    
     background-color: lightblue;
     cursor: pointer;
-    font-size: 0.8vw;
+    
     border-radius: 999px;
 }
 .postedit__button>button:hover{
     background-color: rgb(33, 116, 224);
-    font-size: 0.8vw;
+    
 }
 .postedit__img{
     place-items: center;
@@ -524,7 +510,7 @@ nav>u1>li>a:hover{
     justify-content: center;
 }
 .post__label>select{
-  height: 3vw;
+  
   border-radius: 999px;
 }
 .search__button{
@@ -534,11 +520,10 @@ nav>u1>li>a:hover{
     margin-bottom: 2vh;
 }
 .search__button>button{
-    width: 8vw;
-    height: 5vh;
+    
     background-color: rgb(158, 203, 240);
     cursor: pointer;
-    font-size: 1.2vw;
+    
     border-radius: 999px;
    
 }
